@@ -1,0 +1,17 @@
+@import url('../css/fonts/monteserrat.css');
+
+#main {
+
+}
+
+#landingImg-1 {
+  width: 75%;
+}
+
+#projects {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+
+}
