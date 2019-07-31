@@ -8,13 +8,14 @@ body {
   /* display: flex; */
   /* justify-content: center; */
   /* align-items: center; */
-  background-image: url('../resources/img/back.jpg');
+  background-image: url('../resources/img/backgrounds/login/1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: #9fadad;
-  margin:0;
+  margin: 0px;
+  /* height: 2000px; */
   /* background: #092756; */
   }
 
@@ -34,17 +35,20 @@ h1 {
 }
 
 .flip-container {
-	/* perspective: 1000; */
-  margin-left: 37%;
-  margin-top: 10%;
+	perspective: 1000;
+}
+
+h1 {
+  margin-top: 0px;
 }
 
 .flipper {
   padding: 30px;
   width: 300px;
   height:250px;
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.8);
+  margin: 6% 0% 0% 40%;
+  /* position: relative; */
+  background-color: rgba(245, 245, 245, 0.8);
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
@@ -63,7 +67,7 @@ h1 {
 }
 
 .front{
-	z-index: 2;
+	z-index: 0;
 	/* for firefox 31 */
 	transform: rotateY(0deg);
 }
@@ -91,21 +95,11 @@ input{
 }
 .flipbutton{
   color:#4096ee;
+  font-weight: bolder;
   text-decoration:none;
   text-align:left !important;
 }
-
-.column {
-  float: left;
-  width: 33.33%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+.navbar {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 0% 3% 0% 3%;
 }
