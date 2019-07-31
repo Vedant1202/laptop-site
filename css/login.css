@@ -1,24 +1,42 @@
 /* Alignment styles */
 
-body, html {
+/* body, html {
   height: 100%;
-}
+} */
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('../resources/img/back1.png');
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  background-image: url('../resources/img/back.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-color: #9fadad;
+  margin:0;
   /* background: #092756; */
   }
 
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 70px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+#logo-nav {
+  width: 5.3%;
+  /* margin: 10px; */
+  /* margin-left: 60px; */
+}
+
 .flip-container {
 	/* perspective: 1000; */
+  margin-left: 37%;
+  margin-top: 10%;
 }
 
 .flipper {
@@ -50,10 +68,12 @@ body {
 	transform: rotateY(0deg);
 }
 
-.back{
+.back {
   transform: rotateY(180deg);
 }
-.flip{
+
+.flip {
+  margin-top: 5% !important;
   height: 420px;
 	transform: rotateY(180deg);
 }
@@ -73,4 +93,19 @@ input{
   color:#4096ee;
   text-decoration:none;
   text-align:left !important;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
 }
