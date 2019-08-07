@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .navbar {
@@ -13,7 +14,7 @@ body {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.8);
   padding-left: 4%;
   padding-right: 4%;
 }
@@ -592,12 +593,12 @@ body {
   padding: 4%;
   border-color: rgb(0, 93, 181);
   border-radius: 0.5rem;
+  text-decoration: none;
 }
 
 .btn-blue:hover {
   background-color: rgb(0, 93, 181);
 }
-
 
 
 /*  */

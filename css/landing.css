@@ -136,10 +136,48 @@
   line-height: 1.5;
 }
 
+.nav-items {
+  padding-top: 1.4%;
+}
 
+.nav-links {
+  color: rgb(102, 102, 102);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 16px;
+  border-radius: .8rem;
+}
 
+.nav-links:hover {
+  color: rgb(66, 66, 66);
+  background-color: rgb(214, 214, 214)
+}
 
+@media (max-width: 640px) {
 
+  #laptop-brands {
+    padding-left: 28%;
+  }
+
+  .laptops {
+    margin-bottom: 15%;
+    height: 140px;
+    margin-top: 15%;
+  }
+
+  .overlay {
+    overflow: hidden;
+    top: 74%;
+  }
+
+  .overlay h2, p {
+    transform: scale(0.9);
+  }
+
+  hr {
+    margin: 0 0 10px 0;
+  }
+}
 
 
 
