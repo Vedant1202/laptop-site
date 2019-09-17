@@ -10,22 +10,22 @@
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/landing.css">
 
-    <link rel="stylesheet" href="../libs/ol.css" type="text/css">
+    <link rel="stylesheet" href="../css/libs/ol.css" type="text/css">
     <style>
       .map {
         height: 400px;
         width: 100%;
       }
     </style>
-    <script src="../libs/ol.js"></script>
+    <script src="../js/libs/ol.js"></script>
 
-    <title></title>
+
   </head>
   <body>
 
     <div class="navbar sticky-top rounded shadow-lg">
       <!-- <h1>Hello</h1> -->
-      <div class="row" style="width: 100%;">
+      <div class="row no-gutters" style="width: 100%;">
         <div class="col-lg-3">
           <a class="navbar-brand" href="#">
             <img src="../resources/img/icons/400w/v1-transparent-black.png" style="width: 35%;" alt="">
@@ -34,7 +34,10 @@
         <div class="col-lg-5">
 
         </div>
-        <div class="col-lg-3 nav-items" align="right">
+        <div class="col-lg-1 nav-items" align="right">
+          <a class="nav-links" href="./products.html">Products</a>
+        </div>
+        <div class="col-lg-2 nav-items" align="right">
           <a class="nav-links" href="./login.html">Login / Sign up</a>
         </div>
       </div>
@@ -47,9 +50,60 @@
 
     <div class="w3-content w3-padding" style="max-width:1564px">
 
+      <!-- Latest Laptops Section -->
+      <div class="basic container intro-2" id="projects" align="center">
+        <h3>Latest Laptops</h3>
+        <hr>
+
+        <div class="container" style="margin-top: 8%; margin-bottom: 15%;">
+          <div class="row" id="laptop-brands">
+            <div class="col-md latest-laptop overlay-container">
+              <img src="../resources/img/laptops/brands/apple.png" alt="" class="laptops">
+              <div class="overlay">
+              <h2>Apple Macbook Pro</h2>
+              <hr>
+              <p>
+                <button class="btn-blue" type="button" name="button">Details</button>
+              </p>
+            </div>
+            </div>
+            <div class="col-md latest-laptop overlay-container">
+              <img src="../resources/img/laptops/brands/dell.png" alt="" class="laptops">
+              <div class="overlay">
+              <h2>Dell XPS 13</h2>
+              <hr>
+              <p>
+                <button class="btn-blue" type="button" name="button">Details</button>
+              </p>
+            </div>
+            </div>
+            <div class="col-md latest-laptop overlay-container">
+              <img src="../resources/img/laptops/brands/hp.png" alt="" class="laptops">
+              <div class="overlay">
+              <h2>HP Spectre</h2>
+              <hr>
+              <p>
+                <button class="btn-blue" type="button" name="button">Details</button>
+              </p>
+            </div>
+            </div>
+          </div>
+          <!-- <hr> -->
+          <div class="row" style="margin-top: 80px;">
+            <!-- <hr> -->
+            <div class="col-md-8">
+              <!--  -->
+            </div>
+            <div class="col-md-3" align="right" style="font-size: 20px !important;">
+              <a href="products.html">View all Laptops</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
   <!-- Project Section -->
   <div class="basic container intro-2" id="projects" align="center">
-    <h3>Latest Laptops</h3>
+    <h3>Brands we serve</h3>
     <hr>
 
     <div class="container" style="margin-top: 8%; margin-bottom: 15%;">
@@ -86,6 +140,7 @@
         </div>
       </div>
     </div>
+
   </div>
 <!--
   <div class="container">

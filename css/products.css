@@ -1,0 +1,200 @@
+@import url('../css/fonts/monteserrat.css');
+
+.main {
+  padding: 2% 4% 5% 4%;
+}
+
+.filters {
+  /* max-height: 748px;
+  overflow-y: auto; */
+}
+
+.filters-tab {
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.filt-options {
+  /* padding-top: 5px; */
+  /* padding-bottom: 5px; */
+}
+
+#landingImg-1 {
+  width: 75%;
+}
+
+#projects {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+#footer {
+  padding: 60px 0px 60px 0px;
+  margin-top: 5%;
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(230, 230, 230);
+}
+
+#footer h1 {
+  margin: 0px;
+}
+
+/**
+ * Layout grid
+*/
+.intro-1 {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr auto auto 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.intro-1 img {
+  grid-column: 1/4;
+  grid-row: 1/5;
+}
+
+.intro-1 .cutout-white {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  z-index: 20;
+}
+
+/**
+ * Make image and text responsive
+*/
+
+.intro-1 img {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.intro-1 h1 {
+  font-size: 10vmin;
+  font-weight: 700;
+  margin: 0;
+  padding: 0.25em;
+  width: 100%;
+  text-align: center;
+}
+
+/**
+ * Text cutout effect
+*/
+
+.cutout-white {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  mix-blend-mode: screen;
+}
+
+.latest-laptop img {
+  width: 100%;
+}
+
+
+.overlay-container {
+  font-size: 20px;
+  /* min-width: 200px; */
+  /* max-width: 300px; */
+  width: 48%;
+  margin: 1%;
+  float: left;
+}
+
+.overlay {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 5%;
+}
+
+.overlay h2{
+  margin:0;
+}
+
+.overlay p{
+  margin:0;
+}
+
+.overlay-container {
+  position: relative;
+  overflow: hidden;
+  line-height: 0; /* details! fix the weird
+                  pixel gap at the bottom of the image */
+}
+
+.overlay {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  line-height: 1;
+
+  /* animation stuff */
+  transition: all 0.3s ease-in-out;
+  opacity: 0.3;
+  bottom: 0;
+  top: 75%;
+}
+
+.overlay-container:hover .overlay {
+  opacity: 1;
+  top: 30%;
+  bottom: 0;
+  line-height: 1.5;
+}
+
+.nav-items {
+  padding-top: 1.4%;
+}
+
+.nav-links {
+  color: rgb(102, 102, 102);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 16px;
+  border-radius: .8rem;
+}
+
+.nav-links:hover {
+  color: rgb(66, 66, 66);
+  background-color: rgb(214, 214, 214)
+}
+
+@media (max-width: 640px) {
+
+  #laptop-brands {
+    padding-left: 28%;
+  }
+
+  .laptops {
+    margin-bottom: 15%;
+    height: 140px;
+    margin-top: 15%;
+  }
+
+  .overlay {
+    overflow: hidden;
+    top: 74%;
+  }
+
+  .overlay h2, p {
+    transform: scale(0.9);
+  }
+
+  hr {
+    margin: 0 0 10px 0;
+  }
+}
+
+
+
+
+/*  */
