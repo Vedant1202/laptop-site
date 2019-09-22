@@ -23,7 +23,26 @@ $('#login').click(function () {
 			alert('Enter password greater than 8 characters');
 		}
 		if (username.length > 6 && password.length > 8) {
-			alert('Success!')
+
+			var data = {
+				'username': username,
+				'password': password
+			};
+
+			$.ajax({
+				type: "POST",
+				url: 'http://localhost:8080/laptop-site/backend/api/auth/login.php',
+				data: data,
+				success: function(data) {
+					console.log('done');
+					// setData('user', JSON.stringify(data));
+					// Nav.assign('home.html')
+				},
+			 error: function(error) {
+				 console.log(error);
+			 },
+			 dataType: 'json'
+			});
 		}
 	} else {
 		alert('Please enter all the fields')
