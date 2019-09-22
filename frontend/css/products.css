@@ -1,7 +1,22 @@
 @import url('../css/fonts/monteserrat.css');
 
-#main {
+.main {
+  padding: 2% 4% 5% 4%;
+}
 
+.filters {
+  /* max-height: 748px;
+  overflow-y: auto; */
+}
+
+.filters-tab {
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.filt-options {
+  /* padding-top: 5px; */
+  /* padding-bottom: 5px; */
 }
 
 #landingImg-1 {
@@ -177,6 +192,16 @@
   hr {
     margin: 0 0 10px 0;
   }
+}
+
+td{
+  width: 25%;
+  padding: 15px;
+  text-align: center;
+
+}
+th{
+  width: 25%;
 }
 
 
