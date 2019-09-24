@@ -51,6 +51,56 @@ $('#login').click(function () {
 });
 
 
+$('#signup').click(function () {
+	// alert('hi');
+
+	var username = $('#uname').val().trim(),
+			fname = $('#fname').val().trim(),
+			lname = $('#lname').val().trim(),
+			phno = $('#phno').val().trim(),
+	 		password = $('#passwd').val().trim();
+
+
+	if (username && password && fname && lname && phno) {
+		if (username.length <= 6) {
+			alert('Enter username greater than 6 characters');
+		}
+		if (password.length <= 8) {
+			alert('Enter password greater than 8 characters');
+		}
+		if (username.length > 6 && password.length > 8) {
+
+			var data = {
+				'username': username,
+				'password': password,
+				'phno': phno,
+				'fname': fname,
+				'lname': lname
+			};
+
+			$.ajax({
+				type: "POST",
+				url: 'http://localhost:8080/laptop-site/backend/api/user/add.php',
+				data: data,
+				success: function(data) {
+					console.log('done');
+					// setData('user', JSON.stringify(data));
+					// Nav.assign('home.html')
+				},
+			 error: function(error) {
+				 console.log(error);
+			 },
+			 dataType: 'json'
+			});
+		}
+		
+	} else {
+		alert('Please enter all the fields');
+	}
+
+});
+
+
 
 
 
