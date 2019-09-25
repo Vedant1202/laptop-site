@@ -23,11 +23,30 @@ $('#login').click(function () {
 			alert('Enter password greater than 8 characters');
 		}
 		if (username.length > 6 && password.length > 8) {
-			alert('Success!')
-		}
-	} else {
-		alert('Please enter all the fields')
-	}
+			// alert('Success!')
+			var formData = {
+				'username': username,
+				'password': password
+			};
+
+
+			$.ajax({
+						type: "POST",
+						url: 'http://localhost/server/api/login.php',
+						data: formData,
+						success: function(data) {
+							alert('Done');
+							console.log(data);
+						},
+					 error: function(error) {
+						 console.log(error);
+					 },
+					 dataType: 'json'
+					});
+				}
+			} else {
+				alert('Please enter all the fields')
+			}
 
 });
 
