@@ -194,6 +194,16 @@
   }
 }
 
+td{
+  width: 25%;
+  padding: 15px;
+  text-align: center;
+
+}
+th{
+  width: 25%;
+}
+
 
 
 
