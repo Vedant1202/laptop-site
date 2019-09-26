@@ -1,3 +1,8 @@
+// GLOBAL VARIABLES
+apiurl = 'http://localhost:8080/laptop-site/backend/api';
+
+
+
 //Navigation functions
 
 var Nav = /** @class */ (function() {

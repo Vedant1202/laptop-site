@@ -31,7 +31,7 @@ $('#login').click(function () {
 
 			$.ajax({
 				type: "POST",
-				url: 'http://localhost/laptop-site/backend/api/auth/login.php',
+				url: apiurl + '/auth/login.php',
 				data: data,
 				success: function(data) {
 					console.log('done');
@@ -46,7 +46,7 @@ $('#login').click(function () {
 			});
 		}
 	} else {
-		alert('Please enter all the fields')
+		alert('Please enter all the fields');
 	}
 
 });
@@ -58,11 +58,11 @@ $('#signup').click(function () {
 	var username = $('#uname').val().trim(),
 			fname = $('#fname').val().trim(),
 			lname = $('#lname').val().trim(),
-			phno = $('#phno').val().trim(),
+			// phno = $('#phno').val().trim(),
 	 		password = $('#passwd').val().trim();
 
 
-	if (username && password && fname && lname && phno) {
+	if (username && password && fname && lname) {
 		if (username.length <= 6) {
 			alert('Enter username greater than 6 characters');
 		}
@@ -74,14 +74,14 @@ $('#signup').click(function () {
 			var data = {
 				'username': username,
 				'password': password,
-				'phno': phno,
+				// 'phno': phno,
 				'fname': fname,
 				'lname': lname
 			};
 
 			$.ajax({
 				type: "POST",
-				url: 'http://localhost/laptop-site/backend/api/user/add.php',
+				url: apiurl + '/user/add.php',
 				data: data,
 				success: function(data) {
 					console.log('done');
