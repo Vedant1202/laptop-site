@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2019 at 12:16 PM
+-- Generation Time: Sep 29, 2019 at 01:55 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -32,6 +32,7 @@ CREATE TABLE `product` (
   `pid` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `display` float NOT NULL,
+  `processor` varchar(250) NOT NULL,
   `storage` int(11) NOT NULL,
   `ram` int(11) NOT NULL,
   `os` varchar(255) NOT NULL,
@@ -44,12 +45,14 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`pid`, `name`, `display`, `storage`, `ram`, `os`, `warranty`, `price`, `imgname`) VALUES
-(2, 'Lenovo Ideapad', 15.6, 1, 8, 'Windows 10', 1, 73000, 'lenovo.jpeg'),
-(3, 'Apple MacBook', 13.3, 2, 8, 'Mac', 1, 63000, 'mac.jpg'),
-(4, 'Asus ROG Strix G', 15.6, 1, 8, 'Windows 10', 1, 60000, 'asus.jpeg'),
-(5, 'Dell XPS', 13, 3, 8, 'Windows 10', 2, 90000, 'dell-na-original-imafkcr9hx7hpjus.jpeg'),
-(6, 'HP Envy', 13, 3, 8, 'Linux', 2, 80000, 'hp-na-2-in-1-laptop-original-imafany65hm2hnvg.jpeg');
+INSERT INTO `product` (`pid`, `name`, `display`, `processor`, `storage`, `ram`, `os`, `warranty`, `price`, `imgname`) VALUES
+(2, 'Lenovo Ideapad', 15.6, 'i5', 1, 8, 'Windows 10', 1, 73000, 'lenovo.jpeg'),
+(3, 'Apple MacBook', 13.3, 'i7', 2, 8, 'Mac', 1, 63000, 'mac.jpg'),
+(4, 'Asus ROG Strix G', 15.6, 'i5', 1, 8, 'Windows 10', 1, 60000, 'asus.jpeg'),
+(5, 'Dell XPS', 13, 'i7', 3, 8, 'Windows 10', 2, 90000, 'dell-na-original-imafkcr9hx7hpjus.jpeg'),
+(6, 'HP Envy', 13, 'i5', 3, 8, 'Linux', 2, 80000, 'hp-na-2-in-1-laptop-original-imafany65hm2hnvg.jpeg'),
+(7, 'Microsoft SurfaceBook', 13, 'i5', 2, 16, 'Windows 10', 1, 95000, 'microsoft-na-2-in-1-laptop-original-imafd4txrpws9jgg.jpeg'),
+(8, 'Macbook Pro', 13, 'i7', 3, 8, 'Mac OS Mojave', 2, 145000, 'apple-na-thin-and-light-laptop-original-imafgwevstseefc9.jpeg');
 
 -- --------------------------------------------------------
 
@@ -96,7 +99,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
