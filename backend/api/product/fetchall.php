@@ -26,7 +26,8 @@ if ($conn->connect_error) {
       while($row = $result->fetch_assoc())
         {
         $res = json_encode([
-          "name" => $row["name"] ,
+          "pid" => $row["pid"],
+          "name" => $row["name"],
           "display" => $row["display"],
           "processor" => $row["processor"],
           "storage" => $row["storage"],

@@ -5,6 +5,9 @@ if (checkData('user')) {
   $('#signout').addClass('hidden');
 }
 
+if (!checkData('laptopDetails')) {
+  Nav.assign('products.html');
+}
 
 $(document).ready(function () {
 
@@ -12,14 +15,14 @@ $(document).ready(function () {
     type: "POST",
     url: apiurl + '/product/fetchone.php',
     data: {
-      'pid': 3
+      'pid': getData('laptopDetails').pid
     },
     success: function(data) {
       console.log(JSON.parse(data[0]));
       console.log(data.length);
       for (var i = 0; i < data.length; i++) {
         var prod = JSON.parse(data[i]);
-        $('#productsDiv').append(
+        $('#details').append(
           `
           <div class="row" style="padding:20px;">
             <div class="col-4" align="center" style="background:#ededed; margin-left:50px;">
@@ -60,13 +63,13 @@ $(document).ready(function () {
                 </div>
                 <div class="col-3">
                   <ul>
-                    <li style="padding:5px;">${prod.} Processor</li>
-                    <li style="padding:5px;">15.6 INCH</li>
-                    <li style="padding:5px;">2TB</li>
-                    <li style="padding:5px;">8GB DDR4 RAM</li>
-                    <li style="padding:5px;">Windows 10 Home</li>
-                    <li style="padding:5px;">1 Year Warranty</li>
-                    <li style="padding:5px;">&#8377;49900</li>
+                    <li style="padding:5px;">${prod.processor} Processor</li>
+                    <li style="padding:5px;">${prod.display} INCH</li>
+                    <li style="padding:5px;">${prod.storage} TB</li>
+                    <li style="padding:5px;">${prod.ram} GB DDR4 RAM</li>
+                    <li style="padding:5px;">${prod.os}</li>
+                    <li style="padding:5px;">${prod.warranty} Year Warranty</li>
+                    <li style="padding:5px;">&#8377; ${prod.price}</li>
                   </ul>
                 </div>
               </div>

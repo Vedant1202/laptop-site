@@ -5,6 +5,7 @@ if (checkData('user')) {
   $('#signout').addClass('hidden');
 }
 
+deleteData('laptopDetails');
 
 $(document).ready(function () {
 
@@ -19,7 +20,7 @@ $(document).ready(function () {
         var prod = JSON.parse(data[i]);
         $('#productsDiv').append(
           `
-          <div class="row"  style="cursor: pointer;" onclick="Nav.assign('laptop-details.html');" style="margin-bottom: 50px;">
+          <div class="row"  style="cursor: pointer;" onclick="setData('laptopDetails', JSON.stringify({'pid': ${prod.pid}})); Nav.assign('laptop-details.html');" style="margin-bottom: 50px;">
             <!-- <div class="laptop-item"> -->
               <div class="col-4">
                 <img src="${prod.imgname}" class="laptops" style="width: 70%;">
