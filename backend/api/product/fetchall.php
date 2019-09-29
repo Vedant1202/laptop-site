@@ -11,6 +11,7 @@ include "../connection.php";
 if ($conn->connect_error) {
   echo "Connection failed: " . $conn->connect_error;
 } else {
+  if ( isset($_POST["pid"]) && !empty($_POST["pid"])){    // code...
 
     $sql = "SELECT * FROM product ORDER BY pid DESC";
     $result = $conn->query($sql);
@@ -44,6 +45,14 @@ if ($conn->connect_error) {
 
       // echo json_encode([json_decode(statusMessage(200, "success")), $res]);
     }
+  } else {
+    // code...
+    echo statusMessage(400, "bad request");
+
+  }
+
+
+
 
   }
 
