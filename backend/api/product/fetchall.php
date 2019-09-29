@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 } else {
   if ( isset($_POST["pid"]) && !empty($_POST["pid"])){    // code...
 
-    $pid = $_POST['pid']; 
+    $pid = $_POST['pid'];  
     $sql = "SELECT * FROM product WHERE pid = $pid";
     $result = $conn->query($sql);
 
