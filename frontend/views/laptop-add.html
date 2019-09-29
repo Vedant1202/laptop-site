@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/products.css">
 
+    <!-- JS IMPORTS -->
+    <script src="../js/libs/jquery.min.js" charset="utf-8"></script>
+
     <!-- UTILITY FUNCTIONS IMPORT -->
     <script src="../js/utils.js" charset="utf-8"></script>
 
@@ -103,13 +106,18 @@
           <label>Image</label>
         </div>
         <div class="col-6" align="left">
-          <input type="file" placeholder="Add Image" style="height:25px; border:1px groove #000">
+          <input type="file" placeholder="Add Image" id="img" style="height:25px; border:1px groove #000">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" align="center" style="margin-top: 4%;">
+          <button type="button" class="btn-blue" id="add" style="padding-top: 15px; padding-bottom: 15px;">Submit</button>
         </div>
       </div>
     </div>
 
 
 
-
+  <script src="../js/laptop-add.js" charset="utf-8"></script>
   </body>
 </html>

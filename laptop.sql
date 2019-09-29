@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2019 at 09:31 AM
+-- Generation Time: Sep 29, 2019 at 11:42 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -39,6 +39,14 @@ CREATE TABLE `product` (
   `price` bigint(20) NOT NULL,
   `imgname` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`pid`, `name`, `display`, `storage`, `ram`, `os`, `warranty`, `price`, `imgname`) VALUES
+(2, 'Lenovo Ideapad', 15.6, 1, 8, 'Windows 10', 1, 73000, 'lenovo.jpeg'),
+(3, 'Apple MacBook', 13.3, 2, 8, 'Mac', 1, 63000, 'mac.jpg');
 
 -- --------------------------------------------------------
 
@@ -85,7 +93,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
