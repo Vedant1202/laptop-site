@@ -15,7 +15,7 @@ if ($conn->connect_error) {
   if ( isset($_POST["name"]) && !empty($_POST["name"]) && isset($_POST["display"]) && !empty($_POST["display"])
   && isset($_POST["storage"]) && !empty($_POST["storage"]) && isset($_POST["ram"]) && !empty($_POST["ram"]) &&
   isset($_POST["os"]) && !empty($_POST["os"]) && isset($_POST["warranty"]) && !empty($_POST["warranty"]) &&
-  isset($_POST["price"]) && !empty($_POST["price"]) ) {
+  isset($_POST["processor"]) && !empty($_POST["processor"]) && isset($_POST["price"]) && !empty($_POST["price"]) ) {
 
     $name = $_POST["name"];
     $display = $_POST["display"];
@@ -24,6 +24,7 @@ if ($conn->connect_error) {
     $os = $_POST["os"];
     $warranty = $_POST["warranty"];
     $price = $_POST["price"];
+    $processor = $_POST["processor"];
 
 
     if ( 0 < $_FILES['file']['error'] ) {
@@ -34,8 +35,8 @@ if ($conn->connect_error) {
         $imgname = $_FILES["file"]["name"];
         move_uploaded_file($_FILES['file']['tmp_name'], '../../uploads/' . $_FILES['file']['name']);
 
-        $sql = "INSERT INTO product (name, display, storage, ram, os, warranty, price, imgname)
-        VALUES ('$name', '$display', '$storage', '$ram', '$os', '$warranty', '$price', '$imgname')";
+        $sql = "INSERT INTO product (name, display, storage, ram, os, warranty, price, imgname, processor)
+        VALUES ('$name', '$display', '$storage', '$ram', '$os', '$warranty', '$price', '$imgname', '$processor')";
 
         if (!mysqli_query($conn, $sql)) {
           echo statusMessage(500, "internal server error");

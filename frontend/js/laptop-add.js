@@ -6,11 +6,12 @@ $('#add').click(function () {
 			storage = $('#storage').val().trim(),
       ram = $('#ram').val().trim(),
       os = $('#os').val().trim(),
+      processor = $('#processor').val().trim(),
       warranty = $('#warranty').val().trim(),
       price = $('#price').val().trim();
 
 
-	if (name && display && storage && ram && os && warranty && price && $('#img')[0].files[0]) {
+	if (name && display && storage && processor && ram && os && warranty && price && $('#img')[0].files[0]) {
 
     var img =  document.getElementById('img').files[0];
     var formdata = new FormData();
@@ -22,9 +23,10 @@ $('#add').click(function () {
     formdata.append('os', os);
     formdata.append('warranty', warranty);
     formdata.append('price', price);
+    formdata.append('processor', processor);
     formdata.append('file', img);
 
-    console.log(formdata);
+    // console.log(formdata);
 
 		$.ajax({
 			type: "POST",
