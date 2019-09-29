@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 
 include "../functions.php";
 include "../connection.php";
-
+ 
 
 // Check connection
 if ($conn->connect_error) {
@@ -25,7 +25,7 @@ if ($conn->connect_error) {
       $conn->close();
       $collection = array();
       while($row = $result->fetch_assoc())
-        {
+      {
         $res = json_encode([
         "name" => $row["name"] ,
         "display" => $row["display"],
@@ -37,9 +37,9 @@ if ($conn->connect_error) {
         "imgname" => $row["imgname"] ]);
 
         array_push($collection, $res);
-        };
-        echo json_encode($collection);
-        #'added' => TRUE
+      };
+      echo json_encode($collection);
+      #'added' => TRUE
 
       // echo json_encode([json_decode(statusMessage(200, "success")), $res]);
     }

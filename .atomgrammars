@@ -7,3 +7,4 @@ frontend\views\login.html//text.html.basic
 frontend\views\landing.html//text.html.basic
 backend\api\user\add.php//text.html.php
 backend\api\connection.php//text.html.php
+backend\api\product\fetchall.php//text.html.php

@@ -44,7 +44,10 @@ if ($conn->connect_error) {
 
       // echo json_encode([json_decode(statusMessage(200, "success")), $res]);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> da95060e6d12269956ca76d652582cedd0444a94
 
 
 
