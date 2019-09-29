@@ -1,6 +1,5 @@
 <?php
 
-header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
 
 include "../functions.php";
@@ -8,11 +7,14 @@ include "../connection.php";
 
 
 // Check connection
+
 if ($conn->connect_error) {
   echo "Connection failed: " . $conn->connect_error;
 } else {
-
-    $sql = "SELECT * FROM product ORDER BY pid DESC";
+  if (isset($_POST["pid1"]) && !empty($_POST["pid1"]) && isset($_POST["pid2"]) && !empty($_POST["pid2"])){    // code...
+    $pid1 = $_POST['pid1'];
+    $pid2 = $_POST['pid2'];
+    $sql = "SELECT * FROM product WHERE pid = $pid1 or pid = $pid2";
     $result = $conn->query($sql);
 
     if (!mysqli_query($conn, $sql)) {
@@ -26,18 +28,16 @@ if ($conn->connect_error) {
       while($row = $result->fetch_assoc())
         {
         $res = json_encode([
-          "pid" => $row["pid"],
-          "name" => $row["name"],
-          "display" => $row["display"],
-          "processor" => $row["processor"],
-          "storage" => $row["storage"],
-          "ram" => $row["ram"],
-          "os" => $row["os"],
-          "warranty" => $row["warranty"],
-          "price" => $row["price"],
-          "imgname" => 'http://localhost/laptop-site/backend/uploads/' . $row["imgname"]
+            "name" => $row["name"] ,
+            "display" => $row["display"],
+            "processor" => $row["processor"],
+            "storage" => $row["storage"],
+            "ram" => $row["ram"],
+            "os" => $row["os"],
+            "warranty" => $row["warranty"],
+            "price" => $row["price"],
+            "imgname" => 'http://localhost:8080/laptop-site/backend/uploads/' . $row["imgname"]
         ]);
- 
         array_push($collection, $res);
         };
         echo json_encode($collection);
@@ -45,10 +45,11 @@ if ($conn->connect_error) {
 
       // echo json_encode([json_decode(statusMessage(200, "success")), $res]);
     }
-<<<<<<< HEAD
+  } else {
+    // code...
+    echo statusMessage(400, "bad request");
 
-=======
->>>>>>> da95060e6d12269956ca76d652582cedd0444a94
+  }
 
 
 
