@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2019 at 11:42 AM
+-- Generation Time: Sep 29, 2019 at 12:16 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -46,7 +46,10 @@ CREATE TABLE `product` (
 
 INSERT INTO `product` (`pid`, `name`, `display`, `storage`, `ram`, `os`, `warranty`, `price`, `imgname`) VALUES
 (2, 'Lenovo Ideapad', 15.6, 1, 8, 'Windows 10', 1, 73000, 'lenovo.jpeg'),
-(3, 'Apple MacBook', 13.3, 2, 8, 'Mac', 1, 63000, 'mac.jpg');
+(3, 'Apple MacBook', 13.3, 2, 8, 'Mac', 1, 63000, 'mac.jpg'),
+(4, 'Asus ROG Strix G', 15.6, 1, 8, 'Windows 10', 1, 60000, 'asus.jpeg'),
+(5, 'Dell XPS', 13, 3, 8, 'Windows 10', 2, 90000, 'dell-na-original-imafkcr9hx7hpjus.jpeg'),
+(6, 'HP Envy', 13, 3, 8, 'Linux', 2, 80000, 'hp-na-2-in-1-laptop-original-imafany65hm2hnvg.jpeg');
 
 -- --------------------------------------------------------
 
@@ -93,7 +96,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
