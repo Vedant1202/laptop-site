@@ -48,3 +48,15 @@ function checkData(cname) {
 function deleteData(cname) {
     window.localStorage.removeItem(cname);
 }
+
+function signout() {
+  deleteData('user');
+  alert('Signed out successfully');
+  window.location.reload();
+}
+
+
+
+
+
+//

@@ -32,7 +32,9 @@ body {
   justify-content: space-between;
 }
 
-
+.hidden {
+  display: none;
+}
 
 .position-sticky {
   position: -webkit-sticky !important;

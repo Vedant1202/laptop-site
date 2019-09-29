@@ -1,6 +1,7 @@
 <?php
 
-header('Content-Type: application/json');
+ header('Access-Control-Allow-Origin: *');
+ header('Content-Type: application/json');
 
 include "../functions.php";
 include "../connection.php";
@@ -14,7 +15,7 @@ if ($conn->connect_error) {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $sql = "SELECT * FROM users WHERE username = '$username' ;";
+    $sql = "SELECT * FROM user WHERE username = '$username' ;";
 
 
     if (!mysqli_query($conn, $sql)) {
@@ -28,14 +29,21 @@ if ($conn->connect_error) {
         while($row = $result->fetch_assoc()) {
           $password_hash = $row['password'];
           if (password_verify($password, $password_hash)) {
-            echo statusMessage(200, "success");
+            // echo statusMessage(200, "success");
+            $res = [
+              'login' => TRUE
+            ];
           } else {
-            echo statusMessage(203, "nikal");
+            // echo statusMessage(203, "nikal");
+            $res = [
+              'login' => FALSE
+            ];
           }
           // $row['password'];
         }
       }
       $conn->close();
+      echo json_encode([json_decode(statusMessage(200, "success")), $res]);
     }
 
   } else {

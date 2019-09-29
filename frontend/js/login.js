@@ -16,10 +16,10 @@ $('#login').click(function () {
 	var password = $('#password').val().trim();
 
 	if (username && password) {
-		if (!(username.length > 6)) {
+		if ((username.length <= 6)) {
 			alert('Enter username greater than 6 characters');
 		}
-		if (!(password.length > 8)) {
+		if ((password.length <= 8)) {
 			alert('Enter password greater than 8 characters');
 		}
 		if (username.length > 6 && password.length > 8) {
@@ -34,9 +34,14 @@ $('#login').click(function () {
 				url: apiurl + '/auth/login.php',
 				data: data,
 				success: function(data) {
-					console.log('done');
-					Nav.assign('products.html');
-					// setData('user', JSON.stringify(data));
+					// console.log('done');
+					console.log(data);
+					if (data[1].login) {
+						Nav.assign('products.html');
+						setData('user', JSON.stringify(data));
+					} else {
+						alert('Wrong user credentials');
+					}
 					// Nav.assign('home.html')
 				},
 			 error: function(error) {

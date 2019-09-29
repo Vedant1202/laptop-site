@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../css/master.css">
     <link rel="stylesheet" href="../css/products.css">
 
+    <!-- JS IMPORTS -->
+    <script src="../js/libs/jquery.min.js" charset="utf-8"></script>
+
     <!-- UTILITY FUNCTIONS IMPORT -->
     <script src="../js/utils.js" charset="utf-8"></script>
 
@@ -32,8 +35,11 @@
         <div class="col-lg-2 nav-items" align="right">
           <a class="nav-links" href="./landing.html">Home</a>
         </div>
-        <div class="col-lg-2 nav-items" align="left">
+        <div class="col-lg-2 nav-items" align="left" id="login">
           <a class="nav-links" href="./login.html">Login / Sign up</a>
+        </div>
+        <div class="col-lg-2 nav-items" id="signout" align="left">
+          <a class="nav-links" onclick="signout();">Sign out</a>
         </div>
       </div>
     </div>

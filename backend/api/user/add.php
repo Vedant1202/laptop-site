@@ -10,10 +10,9 @@ include "../connection.php";
 if ($conn->connect_error) {
   echo "Connection failed: " . $conn->connect_error;
 } else {
-  echo '1';
 
   if ( isset($_POST["username"]) && !empty($_POST["username"]) && isset($_POST["password"]) && !empty($_POST["password"])
-  && isset($_POST["fname"]) && !empty($_POST["fname"]) && isset($_POST["lname"]) && !empty($_POST["lname"])) {
+  && isset($_POST["fname"]) && !empty($_POST["fname"]) && isset($_POST["lname"]) && !empty($_POST["lname"]) ) {
 
     $username = $_POST["username"];
     $password =  password_hash(mysqli_real_escape_string($conn, $_POST["password"]), PASSWORD_BCRYPT);
