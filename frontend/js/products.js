@@ -6,6 +6,7 @@ if (checkData('user')) {
 }
 
 deleteData('laptopDetails');
+deleteData('compare');
 
 $(document).ready(function () {
 
@@ -20,12 +21,12 @@ $(document).ready(function () {
         var prod = JSON.parse(data[i]);
         $('#productsDiv').append(
           `
-          <div class="row"  style="cursor: pointer;" onclick="setData('laptopDetails', JSON.stringify({'pid': ${prod.pid}})); Nav.assign('laptop-details.html');" style="margin-bottom: 50px;">
+          <div class="row" style="margin-bottom: 50px;">
             <!-- <div class="laptop-item"> -->
               <div class="col-4">
                 <img src="${prod.imgname}" class="laptops" style="width: 70%;">
               </div>
-              <div class="col-4">
+              <div class="col-4" style="cursor: pointer;" onclick="setData('laptopDetails', JSON.stringify({'pid': ${prod.pid}})); Nav.assign('laptop-details.html');">
                 <strong>${prod.name}</strong>
                 <ul>
                   <li style="padding-bottom:10px;">${prod.processor} Processor</li>
@@ -36,7 +37,7 @@ $(document).ready(function () {
               <div class="col-2">
                 <strong>&#8377; ${prod.price}</strong><br>
                 <div class="row" style="padding-top:20px;">
-                  <input type="checkbox" name="" value=""><b>Add To Compare</b><br>
+                  <input type="checkbox" class="compare" onchange="changeCheck();" id="${prod.pid}"><b>Add To Compare</b><br>
                 </div>
                 <div class="row" style="padding-top:15px ;">
                   <button class="btn-blue" style="padding: 10px; font-size: 20px;" type="button" name="button">Add to Cart</button>
@@ -60,7 +61,12 @@ $(document).ready(function () {
 });
 
 
-
+function changeCheck() {
+  if ($('.compare:checked').length == 2) {
+    setData('compare', JSON.stringify({'pid1': $('.compare:checked')[0].id, 'pid2': $('.compare:checked')[1].id}));
+    Nav.assign('compare.html');
+  }
+}
 
 
 

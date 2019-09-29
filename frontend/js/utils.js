@@ -1,5 +1,5 @@
 // GLOBAL VARIABLES
-apiurl = 'http://localhost/laptop-site/backend/api';
+apiurl = 'http://localhost:8080/laptop-site/backend/api';
 
 
 
