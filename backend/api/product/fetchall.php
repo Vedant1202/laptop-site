@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 } else {
   if ( isset($_POST["pid"]) && !empty($_POST["pid"])){    // code...
 
-    $sql = "SELECT * FROM product ORDER BY pid DESC";
+    $sql = "SELECT * FROM product ORDER BY pid DESC"; 
     $result = $conn->query($sql);
 
     if (!mysqli_query($conn, $sql)) {
