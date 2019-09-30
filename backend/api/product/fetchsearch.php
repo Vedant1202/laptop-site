@@ -11,10 +11,10 @@ include "../connection.php";
 if ($conn->connect_error) {
   echo "Connection failed: " . $conn->connect_error;
 } else {
-  if ( isset($_POST["pid"]) && !empty($_POST["pid"])){    // code...
+  if ( isset($_POST["key"]) && !empty($_POST["key"])){    // code...
 
-    $pid = $_POST['pid'];
-    $sql = "SELECT * FROM product WHERE pid = $pid";
+    $key = $_POST['key'];
+    $sql = "SELECT * FROM product WHERE name LIKE '%$key%' OR processor LIKE '%$key%' OR os LIKE '%$key%'";
     $result = $conn->query($sql);
 
     if (!mysqli_query($conn, $sql)) {
