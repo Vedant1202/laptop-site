@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <link rel="icon" href="../resources/img/icons/400w/v1-transparent-black.png">
+    <title>Laptop Store | Products | ADD</title>
+
+    <!-- CSS IMPORTS -->
+    <link rel="stylesheet" href="../css/master.css">
+    <link rel="stylesheet" href="../css/products.css">
+
+    <!-- JS IMPORTS -->
+    <script src="../js/libs/jquery.min.js" charset="utf-8"></script>
+
+    <!-- UTILITY FUNCTIONS IMPORT -->
+    <script src="../js/utils.js" charset="utf-8"></script>
+
+    <!-- FontAwesome -->
+    <script type="text/javascript" src="../js/fontawesome.js"></script>
+
+  </head>
+  <body>
+
+
+    <!-- NAVBAR -->
+    <div class="navbar sticky-top rounded shadow-lg">
+      <!-- <h1>Hello</h1> -->
+      <div class="row no-gutters" style="width: 100%;">
+        <div class="col-lg-3">
+          <a class="navbar-brand" href="landing.html">
+            <img src="../resources/img/icons/400w/v1-transparent-black.png" style="width: 35%;">
+          </a>
+        </div>
+        <div class="col-lg-4">
+
+        </div>
+        <div class="col-lg-1 nav-items" align="right">
+          <a class="nav-links" href="./landing.html">Home</a>
+        </div>
+        <div class="col-lg-1 nav-items" align="right">
+          <a class="nav-links" href="./products.html">Products</a>
+        </div>
+        <div class="col-lg-2 nav-items" id="signout" align="left">
+          <a class="nav-links" onclick="signout();">Sign out</a>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top:50px;">
+      <div class="row">
+        <div class="col-6" style="background-color: rgb(230, 230, 230);">
+          <div class="row" style="margin-bottom:15px; padding-left:20px; padding-top:10px;">
+            <strong style="font-size:20px;">MY CART</strong>
+          </div>
+          <hr>
+          <div class="row" style="padding-bottom:10px;">
+            <div class="col-4">
+              <img src="../resources/img/laptops/brands/dell.png " style="width:190px; height:150px; padding:30px;">
+            </div>
+            <div class="col-6" style=" padding-top:25px; margin-left:20px;">
+              <div class="row">
+                <strong style="font-size:15px;">Dell Insipron 16GB WIndows 10</strong>
+              </div>
+              <div class="row" style="margin-top:25px;">
+                <strong style="font-size:18px;">&#8377;49900</strong>
+              </div>
+              <div class="row">
+                <a href="#" style="padding-top:25px; text-decoration:none;">REMOVE</a>
+              </div>
+            </div>
+          </div>
+          <hr style="padding:1px;">
+          <div class="row" style="padding-bottom:10px;">
+            <div class="col-4">
+              <img src="../resources/img/laptops/brands/dell.png " style="width:190px; height:150px; padding:30px;">
+            </div>
+            <div class="col-6" style=" padding-top:25px; margin-left:20px;">
+              <div class="row">
+                <strong style="font-size:15px;">Dell Insipron 16GB WIndows 10</strong>
+              </div>
+              <div class="row" style="margin-top:25px;">
+                <strong style="font-size:18px;">&#8377;49900</strong>
+              </div>
+              <div class="row">
+                <a href="#" style="padding-top:25px; text-decoration:none;">REMOVE</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-5" style="margin-left:30px;">
+          <div class="row" style="margin-bottom:15px; padding-left:20px; padding-top:10px;">
+            <strong style="font-size:20px;">PRICE DETAILS</strong>
+          </div>
+          <hr>
+          <div class="row" style="padding:25px;">
+            <div class="col-6">
+              <strong id="price" style="font-size:15px; float:left;">PRICE :</strong>
+            </div>
+            <div class="col-4">
+              <strong style="font-size:15px;">&#8377;49900</strong>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6" align="left">
+              <strong style="font-size:15px;">DELIVERY :</strong>
+            </div>
+            <div class="col-4">
+              <strong style="font-size:15px;">FREE</strong>
+            </div>
+          </div>
+          <hr style="padding:1px;">
+          <div class="row" style="margin-top:20px;margin-bottom:20px;">
+            <div class="col-6" align="left">
+              <strong id="payable" style="font-size:18px;">TOTAL PAYABLE :</strong>
+            </div>
+            <div class="col-4">
+              <strong style="font-size:18px;">&#8377;49900</strong>
+            </div>
+          </div>
+          <hr style="padding:1px;">
+          <div class="row" style="margin:20px;">
+            <div class="col-6">
+            </div>
+            <div class="col-4" align="right">
+              <button type="button" class="btn-blue" style="padding-top: 10px; padding-bottom: 10px;">PLACE ORDER</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="footer">
+
+        <div class="container" style="margin-top:40px;">
+          <div class="row">
+          <!-- <div class="col-12"> -->
+
+          <div class="col-3">
+            <div style="font-size:20px;margin-top: 20px;text-align:center;"> <b>Customer Service</b></div> <hr>
+            <ul style="font-size:16px;list-style-type: none;">
+              <li style="padding:5px;">Contact us</li>
+              <li style="padding:5px;">Visit us</li>
+              <li style="padding:5px;">Technical Help</li>
+              <li style="padding:5px;">Terms of use</li>
+              <li style="padding:5px;">Copyright</li>
+            </ul>
+          </div>
+          <div class="col-1">
+
+          </div>
+
+          <div class="col-3">
+            <div style="font-size:20px;margin-top: 20px;text-align:center;"><b>Stay in Touch</b></div> <hr>
+            <ul style="font-size:16px;list-style-type: none;">
+                <li style="padding:10px;" class="fa fa-facebook-official"> Facebook </li> <br>
+                <li style="padding:10px;" class="fa fa-twitter"> Twitter</li> <br>
+                <li style="padding:10px;"class="fa fa-instagram"> Instagram</li> <br>
+                <li style="padding:10px;"class="fa fa-pinterest"> Pinterest</li> <br>
+                <li style="padding:10px;"class="fa fa-github"> GitHub</li> <br>
+            </ul>
+          </div>
+
+          <div class="col-1">
+
+          </div>
+
+          <div class="col-2">
+            <div style="font-size:20px;margin-top: 20px;text-align:center;"><b>Newsletter Signup</b> <hr>
+              <p style="font-size:15px;">Susbscribe to our newsletter for more updates </p>
+            </div>
+
+            <!-- <ul style="font-size:16px;list-style-type: none;"> -->
+                <!-- <form style="padding:20px;"> -->
+                <div align="center">
+                    <input style="padding:5px;" type="text" placeholder="Susbscribe"/>
+                <!-- </form> -->
+            <!-- </ul> -->
+          </div>
+          </div>
+        <!-- </div> -->
+        </div>
+        <div style="font-size: 14px; margin-top: 20px; float: right;">
+            &copy; 2019 Dadya&co.pvt.ltd
+        </div>
+        </div>
+
+      </div>
+
+  </body>
+</html>
