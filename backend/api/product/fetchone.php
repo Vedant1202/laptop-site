@@ -37,10 +37,14 @@ if ($conn->connect_error) {
         "warranty" => $row["warranty"],
         "price" => $row["price"],
 <<<<<<< HEAD
+<<<<<<< HEAD
         "imgname" => 'http://localhost/laptop-site/backend/uploads/' . $row["imgname"]
 =======
         "imgname" => 'https://www.laptop-site.tk/laptop-site/backend/uploads/' . $row["imgname"]
 >>>>>>> 7cc7bfc16513df637fcc8f3b453b1ee6da7439a0
+=======
+        "imgname" => 'https://www.laptop-site.ml/laptop-site/backend/uploads/' . $row["imgname"]
+>>>>>>> c9198dae8ddc71b536a56dde3b7cbdd7ce5fe43d
       ]);
 
         array_push($collection, $res);

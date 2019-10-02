@@ -16,18 +16,6 @@
 
 }
 
-#footer {
-  padding: 60px 0px 60px 0px;
-  margin-top: 5%;
-  font-size: 40px;
-  font-family: 'Montserrat', sans-serif;
-  background-color: rgb(230, 230, 230);
-}
-
-#footer h1 {
-  margin: 0px;
-}
-
 /**
  * Layout grid
 */
