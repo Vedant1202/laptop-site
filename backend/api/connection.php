@@ -2,7 +2,8 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "Root1234.";
+// $password = "";
 $dbname = "laptop";
 
 // Create connection

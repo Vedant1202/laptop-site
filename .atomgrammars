@@ -8,3 +8,10 @@ frontend\views\landing.html//text.html.basic
 backend\api\user\add.php//text.html.php
 backend\api\connection.php//text.html.php
 backend\api\product\fetchall.php//text.html.php
+backend\api\product\add.php//text.html.php
+backend\api\product\fetchone.php//text.html.php
+backend\api\product\compare.php//text.html.php
+frontend\views\products.html//text.html.basic
+frontend\views\laptop-add.html//text.html.basic
+frontend\views\laptop-details.html//text.html.basic
+frontend\views\compare.html//text.html.basic

@@ -31,11 +31,16 @@ if ($conn->connect_error) {
         "name" => $row["name"] ,
         "display" => $row["display"],
         "storage" => $row["storage"],
+        "processor" => $row["processor"],
         "ram" => $row["ram"],
         "os" => $row["os"],
         "warranty" => $row["warranty"],
         "price" => $row["price"],
+<<<<<<< HEAD
         "imgname" => 'http://localhost/laptop-site/backend/uploads/' . $row["imgname"]
+=======
+        "imgname" => 'https://www.laptop-site.tk/laptop-site/backend/uploads/' . $row["imgname"]
+>>>>>>> 7cc7bfc16513df637fcc8f3b453b1ee6da7439a0
       ]);
 
         array_push($collection, $res);

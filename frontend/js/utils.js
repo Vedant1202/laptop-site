@@ -1,6 +1,6 @@
 // GLOBAL VARIABLES
-apiurl = 'http://localhost/laptop-site/backend/api';
-
+apiurl = 'https://www.laptop-site.tk/laptop-site/backend/api';
+// var apiurl = 'http://localhost:8080/laptop-site/backend/api';
 
 
 //Navigation functions
