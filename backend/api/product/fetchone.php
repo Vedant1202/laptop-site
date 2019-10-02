@@ -36,7 +36,7 @@ if ($conn->connect_error) {
         "os" => $row["os"],
         "warranty" => $row["warranty"],
         "price" => $row["price"],
-        "imgname" => 'https://www.laptop-site.tk/laptop-site/backend/uploads/' . $row["imgname"]
+        "imgname" => 'https://www.laptop-site.ml/laptop-site/backend/uploads/' . $row["imgname"]
       ]);
 
         array_push($collection, $res);
