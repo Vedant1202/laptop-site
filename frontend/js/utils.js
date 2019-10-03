@@ -76,7 +76,7 @@ function addToCart(elem) {
 
 }
 
-function fetchCart(uid) {
+function fetchCart(uid, justPid=false) {
   $.ajax({
     type: "POST",
     url: apiurl + '/cart/fetch.php',
@@ -85,7 +85,13 @@ function fetchCart(uid) {
     },
     success: function(data) {
       console.log('done');
-      setData('cart', JSON.stringify({'items': data}));
+      if (justPid) {
+        var arr = [];
+        for (var i = 0; i < data.length; i++) {
+          arr.push(JSON.parse(data[i]).pid);
+        }
+        setData('cart', JSON.stringify({'pid': arr}));
+      }
       // window.location.reload();
       // setData('user', JSON.stringify(data));
       // Nav.assign('home.html')
