@@ -40,7 +40,7 @@ $(document).ready(function () {
                   <input type="checkbox" class="compare" onchange="changeCheck();" id="${prod.pid}"><b>Add To Compare</b><br>
                 </div>
                 <div class="row" style="padding-top:15px ;">
-                  <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" id="${prod.pid}" onclick="addToCart();" name="button">Add to Cart</button>
+                  <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" id="${prod.pid}" onclick="addToCart(this);" name="button">Add to Cart</button>
                 </div>
               </div>
             <!-- </div> -->
@@ -113,7 +113,7 @@ function searchLaptop(keyword) {
                       <input type="checkbox" class="compare" onchange="changeCheck();" id="${prod.pid}"><b>Add To Compare</b><br>
                     </div>
                     <div class="row" style="padding-top:15px ;">
-                      <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" id="${prod.pid}" onclick="addToCart();" name="button">Add to Cart</button>
+                      <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" id="${prod.pid}" onclick="addToCart(this);" name="button">Add to Cart</button>
                     </div>
                   </div>
                 <!-- </div> -->
@@ -171,7 +171,7 @@ function searchLaptop(keyword) {
                     <input type="checkbox" class="compare" onchange="changeCheck();" id="${prod.pid}"><b>Add To Compare</b><br>
                   </div>
                   <div class="row" style="padding-top:15px ;">
-                    <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" id="${prod.pid}" onclick="addToCart();" type="button" name="button">Add to Cart</button>
+                    <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" id="${prod.pid}" onclick="addToCart(this);" type="button" name="button">Add to Cart</button>
                   </div>
                 </div>
               <!-- </div> -->
@@ -199,28 +199,6 @@ function searchLaptop(keyword) {
   }
 }
 
-
-function addToCart(elem) {
-
-  $.ajax({
-    type: "POST",
-    url: apiurl + '/cart/add.php',
-    data: {
-      'pid': elem.id,
-      'uid': getData('user')[1].uid,
-    },
-    success: function(data) {
-      console.log(data);
-    },
-   error: function(error) {
-     console.log(error);
-   },
-   dataType: 'json',
-   processData: false,
-   contentType: false
-  });
-
-}
 
 
 
