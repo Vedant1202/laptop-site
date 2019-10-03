@@ -95,8 +95,8 @@ function fetchCart(uid, justPid=false) {
         setData('cart', JSON.stringify({'pid': arr}));
       } else {
         var totalAmt = 0;
-        for (var j = 0; j < array.length; j++) {
-          var item = array[j];
+        for (var j = 0; j < data.length; j++) {
+          var item = data[j];
           totalAmt = totalAmt + parseInt(item.price);
           $('#cart-items').append(`
             <div class="row" style="padding-bottom:10px;">
