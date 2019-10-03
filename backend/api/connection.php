@@ -1,6 +1,8 @@
 <?php
 
-$servername = "localhost";
+// $servername = "13.127.239.17";
+$servername = "localhost";  // For AWS
+
 $username = "root";
 $password = "Root1234.";
 // $password = "";

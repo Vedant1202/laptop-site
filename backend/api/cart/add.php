@@ -1,4 +1,4 @@
-<?php
+c1<?php
 
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
@@ -20,8 +20,8 @@ if ($conn->connect_error) {
     // $fname = $_POST["fname"];
     $uid = $_POST["uid"];
 
-    $sql = "INSERT INTO user (pid,uid)
-            VALUES ('$pid', '$uid')";
+    $sql = "INSERT INTO user (pid, uid)
+            VALUES ($pid, $uid)";
 
     if (!mysqli_query($conn, $sql)) {
       echo statusMessage(500, "internal server error");
