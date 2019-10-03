@@ -72,8 +72,6 @@ function addToCart(elem) {
      console.log(error);
    },
    dataType: 'json',
-   processData: false,
-   contentType: false
   });
 
 }
