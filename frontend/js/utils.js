@@ -56,6 +56,26 @@ function signout() {
 }
 
 
+function addToCart(elem) {
+
+  $.ajax({
+    type: "POST",
+    url: apiurl + '/cart/add.php',
+    data: {
+      'pid': elem.id,
+      'uid': getData('user')[1].uid,
+    },
+    success: function(data) {
+      console.log(data);
+    },
+   error: function(error) {
+     console.log(error);
+   },
+   dataType: 'json',
+  });
+
+}
+
 
 
 

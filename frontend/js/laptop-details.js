@@ -14,7 +14,7 @@ $(document).ready(function () {
   $.ajax({
     type: "POST",
     url: apiurl + '/product/fetchone.php',
-    data: { 
+    data: {
       'pid': getData('laptopDetails').pid
     },
     success: function(data) {
@@ -30,7 +30,7 @@ $(document).ready(function () {
                 <img src="${prod.imgname}" width="80%">
               </div>
               <div style="margin-top:50px;">
-                <button class="btn-blue" style="padding: 10px; font-size: 20px;" type="button" name="button">Add to Cart</button>
+                <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" name="button">Add to Cart</button>
               </div>
             </div>
             <div class="col-6" align="left" style="margin-left:30px;">
@@ -77,6 +77,14 @@ $(document).ready(function () {
           </div>
           `
         );
+      }
+      if (!checkData('user')) {
+        var elems = document.getElementsByClassName('addToCart');
+        for (var j = 0; j < elems.length; j++) {
+          elems[j].setAttribute('disabled', '');
+          elems[j].style.backgroundColor = '#729db5';
+          elems[j].style.borderColor = '#729db5';
+        }
       }
     },
    error: function(error) {

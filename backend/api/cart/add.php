@@ -20,7 +20,7 @@ if ($conn->connect_error) {
     // $fname = $_POST["fname"];
     $uid = $_POST["uid"];
 
-    $sql = "INSERT INTO user (pid, uid)
+    $sql = "INSERT INTO cart (pid, uid)
             VALUES ($pid, $uid)";
 
     if (!mysqli_query($conn, $sql)) {

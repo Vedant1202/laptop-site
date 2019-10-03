@@ -40,7 +40,7 @@ $(document).ready(function () {
                   <input type="checkbox" class="compare" onchange="changeCheck();" id="${prod.pid}"><b>Add To Compare</b><br>
                 </div>
                 <div class="row" style="padding-top:15px ;">
-                  <button class="btn-blue" style="padding: 10px; font-size: 20px;" type="button" id="${prod.pid}" onclick="addToCart();" name="button">Add to Cart</button>
+                  <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" id="${prod.pid}" onclick="addToCart(this);" name="button">Add to Cart</button>
                 </div>
               </div>
             <!-- </div> -->
@@ -48,6 +48,14 @@ $(document).ready(function () {
           <hr style="margin-bottom: 50px;">
           `
         );
+      }
+      if (!checkData('user')) {
+        var elems = document.getElementsByClassName('addToCart');
+        for (var j = 0; j < elems.length; j++) {
+          elems[j].setAttribute('disabled', '');
+          elems[j].style.backgroundColor = '#729db5';
+          elems[j].style.borderColor = '#729db5';
+        }
       }
     },
    error: function(error) {
@@ -105,7 +113,7 @@ function searchLaptop(keyword) {
                       <input type="checkbox" class="compare" onchange="changeCheck();" id="${prod.pid}"><b>Add To Compare</b><br>
                     </div>
                     <div class="row" style="padding-top:15px ;">
-                      <button class="btn-blue" style="padding: 10px; font-size: 20px;" type="button" id="${prod.pid}" onclick="addToCart();" name="button">Add to Cart</button>
+                      <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" id="${prod.pid}" onclick="addToCart(this);" name="button">Add to Cart</button>
                     </div>
                   </div>
                 <!-- </div> -->
@@ -113,6 +121,14 @@ function searchLaptop(keyword) {
               <hr style="margin-bottom: 50px;">
               `
             );
+          }
+          if (!checkData('user')) {
+            var elems = document.getElementsByClassName('addToCart');
+            for (var j = 0; j < elems.length; j++) {
+              elems[j].setAttribute('disabled', '');
+              elems[j].style.backgroundColor = '#729db5';
+              elems[j].style.borderColor = '#729db5';
+            }
           }
         } else {
           console.log(data);
@@ -155,7 +171,7 @@ function searchLaptop(keyword) {
                     <input type="checkbox" class="compare" onchange="changeCheck();" id="${prod.pid}"><b>Add To Compare</b><br>
                   </div>
                   <div class="row" style="padding-top:15px ;">
-                    <button class="btn-blue" style="padding: 10px; font-size: 20px;" id="${prod.pid}" onclick="addToCart();" type="button" name="button">Add to Cart</button>
+                    <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" id="${prod.pid}" onclick="addToCart(this);" type="button" name="button">Add to Cart</button>
                   </div>
                 </div>
               <!-- </div> -->
@@ -164,7 +180,15 @@ function searchLaptop(keyword) {
             `
           );
         }
-      },
+        if (!checkData('user')) {
+          var elems = document.getElementsByClassName('addToCart');
+          for (var j = 0; j < elems.length; j++) {
+            elems[j].setAttribute('disabled', '');
+            elems[j].style.backgroundColor = '#729db5';
+            elems[j].style.borderColor = '#729db5';
+          }
+        }
+    },
      error: function(error) {
        console.log(error);
      },
@@ -175,28 +199,6 @@ function searchLaptop(keyword) {
   }
 }
 
-
-function addToCart(elem) {
-
-  $.ajax({
-    type: "POST",
-    url: apiurl + '/cart/add.php',
-    data: {
-      'pid': elem.id,
-      'uid':
-    },
-    success: function(data) {
-      console.log(data.length);
-    },
-   error: function(error) {
-     console.log(error);
-   },
-   dataType: 'json',
-   processData: false,
-   contentType: false
-  });
-
-}
 
 
 
