@@ -1,4 +1,4 @@
-c1<?php
+<?php
 
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
@@ -31,7 +31,7 @@ if ($conn->connect_error) {
       // echo "New record created successfully";
       $conn->close();
       $res = [
-        'register' => TRUE
+        'added' => TRUE
       ];
       echo json_encode([json_decode(statusMessage(200, "success")), $res]);
     }
