@@ -31,7 +31,8 @@ if ($conn->connect_error) {
           if (password_verify($password, $password_hash)) {
             // echo statusMessage(200, "success");
             $res = [
-              'login' => TRUE
+              'login' => TRUE,
+              'uid' => $row['uid']
             ];
           } else {
             // echo statusMessage(203, "nikal");
