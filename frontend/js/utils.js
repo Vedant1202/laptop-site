@@ -51,6 +51,7 @@ function deleteData(cname) {
 
 function signout() {
   deleteData('user');
+  deleteData('cart');
   alert('Signed out successfully');
   window.location.reload();
 }
