@@ -11,7 +11,9 @@ if (!checkData('laptopDetails')) {
 
 $(document).ready(function () {
 
-  fetchCart(getData('user')[1].uid, true);
+  if (checkData('user')) {
+    fetchCart(getData('user')[1].uid, true);
+  }
 
   setTimeout(function () {
     $.ajax({
