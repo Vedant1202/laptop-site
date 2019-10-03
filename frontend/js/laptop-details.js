@@ -88,7 +88,7 @@ $(document).ready(function () {
       } else {
         if (checkData('cart')) {
           var pids = getData('cart').pid;
-          if (pids.includes(parseInt(JSON.parse(data[0]).id)) {
+          if (pids.includes(parseInt(JSON.parse(data[0]).id))) {
             document.getElementById('addToCart').style.backgroundColor = '#cc2424';
             document.getElementById('addToCart').style.borderColor = '#cc2424';
             document.getElementById('addToCart').innerText = 'Remove from Cart';
