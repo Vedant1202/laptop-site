@@ -95,32 +95,42 @@ function fetchCart(uid, justPid=false) {
         setData('cart', JSON.stringify({'pid': arr}));
       } else {
         var totalAmt = 0;
-        for (var j = 0; j < data.length; j++) {
-          var item = JSON.parse(data[j]);
-          totalAmt = totalAmt + parseInt(item.price);
-          $('#cart-items').append(`
-            <div class="row" style="padding-bottom:10px;">
-              <div class="col-4">
-                <img src="${item.imgname}" style="width:190px; height:150px; padding:30px;">
+        $('#cart-items').html('');
+        if (data.length > 0) {
+          for (var j = 0; j < data.length; j++) {
+            var item = JSON.parse(data[j]);
+            totalAmt = totalAmt + parseInt(item.price);
+            $('#cart-items').append(`
+              <div class="row" style="padding-bottom:10px;">
+                <div class="col-4">
+                  <img src="${item.imgname}" style="width:190px; height:150px; padding:30px;">
+                </div>
+                <div class="col-6" style=" padding-top:25px; margin-left:20px;">
+                  <div class="row">
+                    <strong style="font-size:15px;">${item.name} ${item.ram} GB ${item.os}</strong>
+                  </div>
+                  <div class="row" style="margin-top:25px;">
+                    <strong style="font-size:18px;">&#8377; ${item.price}</strong>
+                  </div>
+                  <div class="row">
+                    <a onclick="removeCart(this);" style="padding-top:25px; text-decoration:none; color: red;" id="remove-${item.pid}">Remove</a>
+                  </div>
+                </div>
               </div>
-              <div class="col-6" style=" padding-top:25px; margin-left:20px;">
-                <div class="row">
-                  <strong style="font-size:15px;">${item.name} ${item.ram} GB ${item.os}</strong>
-                </div>
-                <div class="row" style="margin-top:25px;">
-                  <strong style="font-size:18px;">&#8377; ${item.price}</strong>
-                </div>
-                <div class="row">
-                  <a onclick="removeCart(this);" style="padding-top:25px; text-decoration:none; color: red;" id="remove-${item.pid}">Remove</a>
-                </div>
-              </div>
-            </div>
-            <hr style="padding:1px;">
-          `);
+              <hr style="padding:1px;">
+            `);
 
+          }
+          $('#price').html('&#8377; ' + totalAmt);
+          $('#payable').html('&#8377; ' + totalAmt);
+        } else {
+          $('#cart-items .container').html('<h2>No items in cart</h2>');
+          document.getElementById('order').setAttribute('disabled', '');
+          document.getElementById('order').style.backgroundColor = '#729db5';
+          document.getElementById('order').style.borderColor = '#729db5';
+          $('#price').html('&#8377; ' + 0);
+          $('#payable').html('&#8377; ' + 0);
         }
-        $('#price').html('&#8377; ' + totalAmt);
-        $('#payable').html('&#8377; ' + totalAmt);
       }
       // window.location.reload();
       // setData('user', JSON.stringify(data));
