@@ -67,8 +67,8 @@ $(document).ready(function () {
               for (var c = 0; c < elems.length; c++) {
                 console.log('cart pid: ' + elems[c].id.split('-')[1]);
                 console.log(pids);
-                console.log(pids.includes(elems[c].id.split('-')[1]));
-                if (pids.includes(elems[c].id.split('-')[1])) {
+                console.log(pids.includes(parseInt(elems[c].id.split('-')[1])));
+                if (pids.includes(parseInt(elems[c].id.split('-')[1]))) {
                   document.getElementById(elems[c].id).style.backgroundColor = '#e58219';
                   document.getElementById(elems[c].id).style.borderColor = '#e58219';
                   document.getElementById(elems[c].id).innerText = 'Go to Cart';
