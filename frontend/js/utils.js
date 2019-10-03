@@ -133,6 +133,7 @@ function fetchCart(uid, justPid=false) {
           $('#payable').html('&#8377; ' + 0);
         }
       }
+      $('#countItems').html('<i>(' + totalAmt + ' items)</i>');
       // window.location.reload();
       // setData('user', JSON.stringify(data));
       // Nav.assign('home.html')
