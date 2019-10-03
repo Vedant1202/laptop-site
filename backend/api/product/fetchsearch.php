@@ -28,16 +28,17 @@ if ($conn->connect_error) {
       while($row = $result->fetch_assoc())
       {
         $res = json_encode([
-        "name" => $row["name"] ,
-        "display" => $row["display"],
-        "storage" => $row["storage"],
-        "processor" => $row["processor"],
-        "ram" => $row["ram"],
-        "os" => $row["os"],
-        "warranty" => $row["warranty"],
-        "price" => $row["price"],
-        "imgname" => 'https://www.laptop-site.ml/laptop-site/backend/uploads/' . $row["imgname"]
-      ]);
+          "pid" => $row["pid"],
+          "name" => $row["name"] ,
+          "display" => $row["display"],
+          "storage" => $row["storage"],
+          "processor" => $row["processor"],
+          "ram" => $row["ram"],
+          "os" => $row["os"],
+          "warranty" => $row["warranty"],
+          "price" => $row["price"],
+          "imgname" => 'https://www.laptop-site.ml/laptop-site/backend/uploads/' . $row["imgname"]
+        ]);
 
         array_push($collection, $res);
       };

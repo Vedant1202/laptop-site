@@ -31,7 +31,7 @@ if ($conn->connect_error) {
 
 
           "pid" => $row["pid"],
-          "uid" => $row["uid"],
+          // "uid" => $row["uid"],
           "name" => $row["name"] ,
           "display" => $row["display"],
           "storage" => $row["storage"],

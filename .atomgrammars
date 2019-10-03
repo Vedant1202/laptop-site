@@ -13,3 +13,5 @@ frontend\views\products.html//text.html.basic
 frontend\views\laptop-add.html//text.html.basic
 frontend\views\laptop-details.html//text.html.basic
 frontend\views\compare.html//text.html.basic
+frontend\js\compare.js//source.js
+frontend\css\landing.css//source.css
