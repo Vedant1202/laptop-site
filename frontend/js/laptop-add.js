@@ -29,6 +29,7 @@ $('#add').click(function () {
     // console.log(formdata);
 
 		$.ajax({
+			
 			type: "POST",
 			url: apiurl + '/product/add.php',
 			data: formdata,
