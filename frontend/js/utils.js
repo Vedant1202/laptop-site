@@ -152,4 +152,13 @@ function removeCart(elem) {
   });
 }
 
+$(document).ready(function () {
+  if (checkData('user')) {
+    $('#login').addClass('hidden');
+  } else {
+    $('#cart').addClass('hidden');
+    $('#signout').addClass('hidden');
+  }
+});
+
 //

@@ -31,7 +31,7 @@ $(document).ready(function () {
           $('#details').append(
             `
             <div class="row" style="padding:20px;">
-              <div class="col-4" align="center" style="background:#ededed; margin-left:50px;">
+              <div class="col-4" align="center" style="margin-left:50px;">
                 <div style="margin:20px;">
                   <img src="${prod.imgname}" width="80%">
                 </div>
