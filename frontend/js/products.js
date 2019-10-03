@@ -21,6 +21,7 @@ $(document).ready(function () {
         success: function(data) {
           console.log(JSON.parse(data[0]));
           console.log(data.length);
+          $('#productsDiv').html('');
           for (var i = 0; i < data.length; i++) {
             var prod = JSON.parse(data[i]);
             $('#productsDiv').append(
