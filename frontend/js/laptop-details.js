@@ -14,7 +14,7 @@ $(document).ready(function () {
   $.ajax({
     type: "POST",
     url: apiurl + '/product/fetchone.php',
-    data: { 
+    data: {
       'pid': getData('laptopDetails').pid
     },
     success: function(data) {
@@ -77,6 +77,9 @@ $(document).ready(function () {
           </div>
           `
         );
+      }
+      if (checkData('user')) {
+        $('.addToCart').attr('disabled', '');
       }
     },
    error: function(error) {
