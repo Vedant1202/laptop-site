@@ -156,6 +156,7 @@ function searchLaptop(keyword) {
               var pids = getData('cart').pid;
               var elems = document.getElementsByClassName('addToCart');
               for (var c = 0; c < elems.length; c++) {
+                console.log('cart pid: ' + elems[c].id);
                 console.log('cart pid: ' + elems[c].id.split('-')[1]);
                 console.log(pids);
                 console.log(pids.includes(parseInt(elems[c].id.split('-')[1])));
