@@ -66,7 +66,8 @@ function addToCart(elem) {
       'uid': getData('user')[1].uid,
     },
     success: function(data) {
-      console.log(data);
+      // console.log(data);
+      alert('Added to cart');
       window.location.reload();
     },
    error: function(error) {
@@ -104,5 +105,23 @@ function fetchCart(uid, justPid=false) {
   });
 }
 
+function removeCart(elem) {
+  $.ajax({
+    type: "POST",
+    url: apiurl + '/cart/remove.php',
+    data: {
+      'uid': getData('user')[1].uid,
+      'pid': elem.id.split('-')[1]
+    },
+    success: function(data) {
+      alert('Removed from cart');
+      window.location.reload();
+    },
+   error: function(error) {
+     console.log(error);
+   },
+   dataType: 'json'
+  });
+}
 
 //
