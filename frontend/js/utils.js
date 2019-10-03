@@ -96,7 +96,7 @@ function fetchCart(uid, justPid=false) {
       } else {
         var totalAmt = 0;
         for (var j = 0; j < data.length; j++) {
-          var item = data[j];
+          var item = JSON.parse(data[j]);
           totalAmt = totalAmt + parseInt(item.price);
           $('#cart-items').append(`
             <div class="row" style="padding-bottom:10px;">
@@ -111,7 +111,7 @@ function fetchCart(uid, justPid=false) {
                   <strong style="font-size:18px;">&#8377; ${item.price}</strong>
                 </div>
                 <div class="row">
-                  <a onclick="removeCart(this)" style="padding-top:25px; text-decoration:none; color: red;" id="remove-${item.pid}">Remove</a>
+                  <a onclick="removeCart(this);" style="padding-top:25px; text-decoration:none; color: red;" id="remove-${item.pid}">Remove</a>
                 </div>
               </div>
             </div>
