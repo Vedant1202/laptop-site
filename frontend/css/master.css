@@ -1,8 +1,11 @@
 body {
   margin: 0px;
   padding: 0px;
+  /* width: inherit; */
   font-family: 'Montserrat', sans-serif;
 }
+
+
 
 .navbar {
   position: relative;
@@ -614,6 +617,23 @@ body {
 
 #footer h1 {
   margin: 0px;
+}
+
+@media (max-width: 1100px){
+  #logo{
+    width: 100px !important;
+  }
+  .map {
+    height: 100px;
+    width: 100%;
+  }
+  #log{
+    width:200px !important;
+  }
+  #dep{
+    height: 100px;
+    width: 100%;
+  }
 }
 
 .loader {

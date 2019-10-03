@@ -196,8 +196,8 @@ function searchLaptop(keyword) {
             `
             <div class="row" style="margin-bottom: 50px;">
               <!-- <div class="laptop-item"> -->
-                <div class="col-4">
-                  <img src="${prod.imgname}" class="laptops" style="width: 70%;">
+                <div class="col-4" id="dep">
+                  <img src="${prod.imgname}" id="log" class="laptops" style="width: 70%;">
                 </div>
                 <div class="col-4" style="cursor: pointer;" onclick="setData('laptopDetails', JSON.stringify({'pid': ${prod.pid}})); Nav.assign('laptop-details.html');">
                   <strong>${prod.name}</strong>
@@ -207,7 +207,7 @@ function searchLaptop(keyword) {
                     <li style="padding-bottom:10px;">${prod.os}</li>
                   </ul>
                 </div>
-                <div class="col-2">
+                <div class="col-2" id="dep">
                   <strong>&#8377; ${prod.price}</strong><br>
                   <div class="row" style="padding-top:20px;">
                     <input type="checkbox" class="compare" onchange="changeCheck();" id="${prod.pid}"><b>Add To Compare</b><br>

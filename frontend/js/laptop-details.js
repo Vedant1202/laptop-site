@@ -33,7 +33,7 @@ $(document).ready(function () {
             <div class="row" style="padding:20px;">
               <div class="col-4" align="center" style="margin-left:50px;">
                 <div style="margin:20px;">
-                  <img src="${prod.imgname}" width="80%">
+                  <img src="${prod.imgname}" id="log" width="80%">
                 </div>
                 <div style="margin-top:50px;">
                   <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" onclick="addToCart(this)" id="item-${prod.pid}" type="button" name="button">Add to Cart</button>
