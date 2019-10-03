@@ -78,8 +78,13 @@ $(document).ready(function () {
           `
         );
       }
-      if (checkData('user')) {
-        $('.addToCart').attr('disabled', '');
+      if (!checkData('user')) {
+        var elems = document.getElementsByClassName('addToCart');
+        for (var j = 0; j < elems.length; j++) {
+          elems[j].setAttribute('disabled', '');
+          elems[j].style.backgroundColor = '#729db5';
+          elems[j].style.borderColor = '#729db5';
+        }
       }
     },
    error: function(error) {

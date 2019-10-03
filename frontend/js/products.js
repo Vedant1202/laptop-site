@@ -49,8 +49,13 @@ $(document).ready(function () {
           `
         );
       }
-      if (checkData('user')) {
-        $('.addToCart').attr('disabled', '');
+      if (!checkData('user')) {
+        var elems = document.getElementsByClassName('addToCart');
+        for (var j = 0; j < elems.length; j++) {
+          elems[j].setAttribute('disabled', '');
+          elems[j].style.backgroundColor = '#729db5';
+          elems[j].style.borderColor = '#729db5';
+        }
       }
     },
    error: function(error) {
@@ -117,8 +122,13 @@ function searchLaptop(keyword) {
               `
             );
           }
-          if (checkData('user')) {
-            $('.addToCart').attr('disabled', '');
+          if (!checkData('user')) {
+            var elems = document.getElementsByClassName('addToCart');
+            for (var j = 0; j < elems.length; j++) {
+              elems[j].setAttribute('disabled', '');
+              elems[j].style.backgroundColor = '#729db5';
+              elems[j].style.borderColor = '#729db5';
+            }
           }
         } else {
           console.log(data);
@@ -170,8 +180,13 @@ function searchLaptop(keyword) {
             `
           );
         }
-        if (checkData('user')) {
-          $('.addToCart').attr('disabled', '');
+        if (!checkData('user')) {
+          var elems = document.getElementsByClassName('addToCart');
+          for (var j = 0; j < elems.length; j++) {
+            elems[j].setAttribute('disabled', '');
+            elems[j].style.backgroundColor = '#729db5';
+            elems[j].style.borderColor = '#729db5';
+          }
         }
     },
      error: function(error) {
@@ -192,10 +207,10 @@ function addToCart(elem) {
     url: apiurl + '/cart/add.php',
     data: {
       'pid': elem.id,
-      'uid':
+      'uid': getData('user')[1].uid,
     },
     success: function(data) {
-      console.log(data.length);
+      console.log(data);
     },
    error: function(error) {
      console.log(error);
