@@ -30,7 +30,7 @@ $(document).ready(function () {
                 <img src="${prod.imgname}" width="80%">
               </div>
               <div style="margin-top:50px;">
-                <button class="btn-blue" style="padding: 10px; font-size: 20px;" type="button" name="button">Add to Cart</button>
+                <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" name="button">Add to Cart</button>
               </div>
             </div>
             <div class="col-6" align="left" style="margin-left:30px;">
