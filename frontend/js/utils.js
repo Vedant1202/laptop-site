@@ -76,7 +76,25 @@ function addToCart(elem) {
 
 }
 
-
+function fetchCart(uid) {
+  $.ajax({
+    type: "POST",
+    url: apiurl + '/cart/fetch.php',
+    data: {
+      'uid': uid
+    },
+    success: function(data) {
+      console.log('done');
+      window.location.reload();
+      // setData('user', JSON.stringify(data));
+      // Nav.assign('home.html')
+    },
+   error: function(error) {
+     console.log(error);
+   },
+   dataType: 'json'
+  });
+}
 
 
 //

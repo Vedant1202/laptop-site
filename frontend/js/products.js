@@ -8,6 +8,8 @@ if (checkData('user')) {
 deleteData('laptopDetails');
 deleteData('compare');
 
+fetchCart(getData('user')[1].uid);
+
 $(document).ready(function () {
 
   $.ajax({
@@ -186,6 +188,14 @@ function searchLaptop(keyword) {
             elems[j].setAttribute('disabled', '');
             elems[j].style.backgroundColor = '#729db5';
             elems[j].style.borderColor = '#729db5';
+          }
+        } else {
+            var elems = document.getElementsByClassName('addToCart');
+            for (var k = 0; k < elems.length; k++) {
+              id = elems[k].id;
+              elems[k].setAttribute('disabled', '');
+              elems[k].style.backgroundColor = '#729db5';
+              elems[k].style.borderColor = '#729db5';
           }
         }
     },
