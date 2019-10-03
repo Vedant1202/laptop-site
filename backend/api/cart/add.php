@@ -1,4 +1,4 @@
-c1<?php
+<?php
 
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json');
@@ -20,7 +20,7 @@ if ($conn->connect_error) {
     // $fname = $_POST["fname"];
     $uid = $_POST["uid"];
 
-    $sql = "INSERT INTO user (pid, uid)
+    $sql = "INSERT INTO cart (pid, uid)
             VALUES ($pid, $uid)";
 
     if (!mysqli_query($conn, $sql)) {
@@ -31,7 +31,7 @@ if ($conn->connect_error) {
       // echo "New record created successfully";
       $conn->close();
       $res = [
-        'register' => TRUE
+        'added' => TRUE
       ];
       echo json_encode([json_decode(statusMessage(200, "success")), $res]);
     }
