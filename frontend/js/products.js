@@ -59,7 +59,8 @@ $(document).ready(function () {
           if (!checkData('user')) {
             var elems = document.getElementsByClassName('addToCart');
             for (var j = 0; j < elems.length; j++) {
-              elems[j].setAttribute('disabled', '');
+              // elems[j].setAttribute('disabled', '');
+              elems[j].setAttribute('onclick', 'alert("Please log in to add to cart")');
               elems[j].style.backgroundColor = '#729db5';
               elems[j].style.borderColor = '#729db5';
             }
@@ -149,7 +150,7 @@ function searchLaptop(keyword) {
           if (!checkData('user')) {
             var elems = document.getElementsByClassName('addToCart');
             for (var j = 0; j < elems.length; j++) {
-              elems[j].setAttribute('disabled', '');
+              elems[j].setAttribute('onclick', 'alert("Please log in to add to cart")');
               elems[j].style.backgroundColor = '#729db5';
               elems[j].style.borderColor = '#729db5';
             }
@@ -224,7 +225,7 @@ function searchLaptop(keyword) {
         if (!checkData('user')) {
           var elems = document.getElementsByClassName('addToCart');
           for (var j = 0; j < elems.length; j++) {
-            elems[j].setAttribute('disabled', '');
+            elems[j].setAttribute('onclick', 'alert("Please log in to add to cart")');
             elems[j].style.backgroundColor = '#729db5';
             elems[j].style.borderColor = '#729db5';
           }

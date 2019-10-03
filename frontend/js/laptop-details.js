@@ -31,7 +31,7 @@ $(document).ready(function () {
           $('#details').append(
             `
             <div class="row" style="padding:20px;">
-              <div class="col-4" align="center" style="background:#ededed; margin-left:50px;">
+              <div class="col-4" align="center" style="margin-left:50px;">
                 <div style="margin:20px;">
                   <img src="${prod.imgname}" id="log" width="80%">
                 </div>
@@ -87,7 +87,7 @@ $(document).ready(function () {
         if (!checkData('user')) {
           var elems = document.getElementsByClassName('addToCart');
           for (var j = 0; j < elems.length; j++) {
-            elems[j].setAttribute('disabled', '');
+            elems[j].setAttribute('onclick', 'alert("Please log in to add to cart")');
             elems[j].style.backgroundColor = '#729db5';
             elems[j].style.borderColor = '#729db5';
           }
