@@ -125,7 +125,7 @@ function fetchCart(uid, justPid=false) {
           $('#price').html('&#8377; ' + totalAmt);
           $('#payable').html('&#8377; ' + totalAmt);
         } else {
-          $('#cart-items')[0].innerHTML = "<div class='container' align='center'><h2>Hello</h2></div>";
+          $('#cart-items')[0].innerHTML = "<div class='container' align='center'><h2>No items in cart</h2></div>";
           document.getElementById('order').setAttribute('disabled', '');
           document.getElementById('order').style.backgroundColor = '#729db5';
           document.getElementById('order').style.borderColor = '#729db5';
