@@ -70,10 +70,10 @@ $(document).ready(function () {
                 console.log(pids);
                 console.log(pids.includes(parseInt(elems[c].id.split('-')[1])));
                 if (pids.includes(parseInt(elems[c].id.split('-')[1]))) {
-                  document.getElementById(elems[c].id).style.backgroundColor = '#e58219';
-                  document.getElementById(elems[c].id).style.borderColor = '#e58219';
-                  document.getElementById(elems[c].id).innerText = 'Go to Cart';
-                  document.getElementById(elems[c].id).setAttribute('onclick', 'Nav.assign("cart.html")');
+                  document.getElementById(elems[c].id).style.backgroundColor = '#cc2424';
+                  document.getElementById(elems[c].id).style.borderColor = '#cc2424';
+                  document.getElementById(elems[c].id).innerText = 'Remove from Cart';
+                  document.getElementById(elems[c].id).setAttribute('onclick', 'removeCart(this)');
                 }
               }
             }
@@ -151,6 +151,22 @@ function searchLaptop(keyword) {
               elems[j].style.backgroundColor = '#729db5';
               elems[j].style.borderColor = '#729db5';
             }
+          } else {
+            if (checkData('cart')) {
+              var pids = getData('cart').pid;
+              var elems = document.getElementsByClassName('addToCart');
+              for (var c = 0; c < elems.length; c++) {
+                console.log('cart pid: ' + elems[c].id.split('-')[1]);
+                console.log(pids);
+                console.log(pids.includes(parseInt(elems[c].id.split('-')[1])));
+                if (pids.includes(parseInt(elems[c].id.split('-')[1]))) {
+                  document.getElementById(elems[c].id).style.backgroundColor = '#cc2424';
+                  document.getElementById(elems[c].id).style.borderColor = '#cc2424';
+                  document.getElementById(elems[c].id).innerText = 'Remove from Cart';
+                  document.getElementById(elems[c].id).setAttribute('onclick', 'removeCart(this)');
+                }
+              }
+            }
           }
         } else {
           console.log(data);
@@ -210,12 +226,20 @@ function searchLaptop(keyword) {
             elems[j].style.borderColor = '#729db5';
           }
         } else {
+          if (checkData('cart')) {
+            var pids = getData('cart').pid;
             var elems = document.getElementsByClassName('addToCart');
-            for (var k = 0; k < elems.length; k++) {
-              id = elems[k].id;
-              elems[k].setAttribute('disabled', '');
-              elems[k].style.backgroundColor = '#729db5';
-              elems[k].style.borderColor = '#729db5';
+            for (var c = 0; c < elems.length; c++) {
+              console.log('cart pid: ' + elems[c].id.split('-')[1]);
+              console.log(pids);
+              console.log(pids.includes(parseInt(elems[c].id.split('-')[1])));
+              if (pids.includes(parseInt(elems[c].id.split('-')[1]))) {
+                document.getElementById(elems[c].id).style.backgroundColor = '#cc2424';
+                document.getElementById(elems[c].id).style.borderColor = '#cc2424';
+                document.getElementById(elems[c].id).innerText = 'Remove from Cart';
+                document.getElementById(elems[c].id).setAttribute('onclick', 'removeCart(this)');
+              }
+            }
           }
         }
     },

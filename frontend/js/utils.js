@@ -67,6 +67,7 @@ function addToCart(elem) {
     },
     success: function(data) {
       console.log(data);
+      window.location.reload();
     },
    error: function(error) {
      console.log(error);
