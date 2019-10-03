@@ -44,7 +44,7 @@ $(document).ready(function () {
                       <input type="checkbox" class="compare" onchange="changeCheck();" id="${prod.pid}"><b>Add To Compare</b><br>
                     </div>
                     <div class="row" style="padding-top:15px ;">
-                      <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" id="${prod.pid}" onclick="addToCart(this);" name="button">Add to Cart</button>
+                      <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" id="item-${prod.pid}" onclick="addToCart(this);" name="button">Add to Cart</button>
                     </div>
                   </div>
                 <!-- </div> -->
@@ -59,6 +59,19 @@ $(document).ready(function () {
               elems[j].setAttribute('disabled', '');
               elems[j].style.backgroundColor = '#729db5';
               elems[j].style.borderColor = '#729db5';
+            }
+          } else {
+            if (checkData('cart')) {
+              var pids = getData('cart').pid;
+              var elems = document.getElementsByClassName('addToCart');
+              for (var c = 0; c < elems.length; c++) {
+                if (pids.includes(elems[c].id.split('-')[1])) {
+                  document.getElementById(elems[c].id).style.backgroundColor = '#e58219';
+                  document.getElementById(elems[c].id).style.borderColor = '#e58219';
+                  document.getElementById(elems[c].id).innerText = 'Go to Cart';
+                  document.getElementById(elems[c].id).setAttribute('onclick', 'Nav.assign("cart.html")');
+                }
+              }
             }
           }
         },
@@ -118,7 +131,7 @@ function searchLaptop(keyword) {
                       <input type="checkbox" class="compare" onchange="changeCheck();" id="${prod.pid}"><b>Add To Compare</b><br>
                     </div>
                     <div class="row" style="padding-top:15px ;">
-                      <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" id="${prod.pid}" onclick="addToCart(this);" name="button">Add to Cart</button>
+                      <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" type="button" id="item-${prod.pid}" onclick="addToCart(this);" name="button">Add to Cart</button>
                     </div>
                   </div>
                 <!-- </div> -->
@@ -176,7 +189,7 @@ function searchLaptop(keyword) {
                     <input type="checkbox" class="compare" onchange="changeCheck();" id="${prod.pid}"><b>Add To Compare</b><br>
                   </div>
                   <div class="row" style="padding-top:15px ;">
-                    <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" id="${prod.pid}" onclick="addToCart(this);" type="button" name="button">Add to Cart</button>
+                    <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" id="item-${prod.pid}" onclick="addToCart(this);" type="button" name="button">Add to Cart</button>
                   </div>
                 </div>
               <!-- </div> -->

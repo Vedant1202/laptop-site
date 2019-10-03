@@ -62,7 +62,7 @@ function addToCart(elem) {
     type: "POST",
     url: apiurl + '/cart/add.php',
     data: {
-      'pid': elem.id,
+      'pid': elem.id.split('-')[1],
       'uid': getData('user')[1].uid,
     },
     success: function(data) {
@@ -88,7 +88,7 @@ function fetchCart(uid, justPid=false) {
       if (justPid) {
         var arr = [];
         for (var i = 0; i < data.length; i++) {
-          arr.push(JSON.parse(data[i]).pid);
+          arr.push(parseInt(JSON.parse(data[i]).pid));
         }
         setData('cart', JSON.stringify({'pid': arr}));
       }
