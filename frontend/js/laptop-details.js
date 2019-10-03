@@ -30,7 +30,7 @@ $(document).ready(function () {
                 <img src="${prod.imgname}" width="80%">
               </div>
               <div style="margin-top:50px;">
-                <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" id="addToCart" type="button" name="button">Add to Cart</button>
+                <button class="btn-blue addToCart" style="padding: 10px; font-size: 20px;" onclick="addToCart(this)" id="item-${prod.pid}" type="button" name="button">Add to Cart</button>
               </div>
             </div>
             <div class="col-6" align="left" style="margin-left:30px;">
@@ -88,11 +88,11 @@ $(document).ready(function () {
       } else {
         if (checkData('cart')) {
           var pids = getData('cart').pid;
-          if (pids.includes(parseInt(JSON.parse(data[0]).id))) {
-            document.getElementById('addToCart').style.backgroundColor = '#cc2424';
-            document.getElementById('addToCart').style.borderColor = '#cc2424';
-            document.getElementById('addToCart').innerText = 'Remove from Cart';
-            document.getElementById('addToCart').setAttribute('onclick', 'removeCart(this)');
+          if (pids.includes(parseInt(JSON.parse(data[0]).pid))) {
+            document.getElementById('item-' + JSON.parse(data[0]).pid).style.backgroundColor = '#cc2424';
+            document.getElementById('item-' + JSON.parse(data[0]).pid).style.borderColor = '#cc2424';
+            document.getElementById('item-' + JSON.parse(data[0]).pid).innerText = 'Remove from Cart';
+            document.getElementById('item-' + JSON.parse(data[0]).pid).setAttribute('onclick', 'removeCart(this)');
           }
         }
       }
