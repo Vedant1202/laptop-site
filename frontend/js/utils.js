@@ -85,7 +85,8 @@ function fetchCart(uid) {
     },
     success: function(data) {
       console.log('done');
-      window.location.reload();
+      setData('cart', JSON.stringify({'items': data}));
+      // window.location.reload();
       // setData('user', JSON.stringify(data));
       // Nav.assign('home.html')
     },
