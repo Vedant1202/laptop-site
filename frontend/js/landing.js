@@ -18,6 +18,16 @@ $(document).ready(function () {
   fetchCart(getData('user')[1].uid, true);
 });
 
-
+function checkEmail(val) {
+  var value = val.trim();
+  var re = /\S+@\S+\.\S+/;
+  // console.log(value);
+  if (!re.test(value)) {
+    // alert('Please enter correct email address');
+    return false;
+  } else {
+    return true;
+  }
+}
 
 //
