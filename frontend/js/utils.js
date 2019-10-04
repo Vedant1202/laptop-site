@@ -94,6 +94,7 @@ function fetchCart(uid, justPid=false) {
           arr.push(parseInt(JSON.parse(data[i]).pid));
         }
         if (data.length > 0) {
+          alert(data.length);
           $('#cartnumber').html('(' + data.length + ')');
         }
         setData('cart', JSON.stringify({'pid': arr}));
