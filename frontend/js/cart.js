@@ -15,7 +15,7 @@ function emptyCart() {
       'uid': getData('user')[1].uid,
     },
     success: function(data) {
-      alert('Order placed succesgfully');
+      alert('Order placed successfully');
       Nav.assign('products.html');
     },
    error: function(error) {
