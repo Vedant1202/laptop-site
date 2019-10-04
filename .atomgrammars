@@ -17,3 +17,4 @@ frontend\js\compare.js//source.js
 frontend\css\landing.css//source.css
 frontend\js\laptop-details.js//source.js
 frontend\views\cart.html//text.html.basic
+frontend\js\utils.js//source.js
