@@ -93,6 +93,9 @@ function fetchCart(uid, justPid=false) {
         for (var i = 0; i < data.length; i++) {
           arr.push(parseInt(JSON.parse(data[i]).pid));
         }
+        if (data.length > 0) {
+          $('#cartnumber').html('(' + data.length + ')');
+        }
         setData('cart', JSON.stringify({'pid': arr}));
       } else {
         var totalAmt = 0;

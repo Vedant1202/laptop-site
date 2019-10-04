@@ -9,6 +9,8 @@ deleteData('laptopDetails');
 
 $(document).ready(function () {
 
+  fetchCart(getData('user')[1].uid, true);
+
   $.ajax({
     type: "POST",
     url: apiurl + '/product/compare.php',

@@ -12,3 +12,12 @@ var map = new ol.Map({
     zoom: 17
   })
 });
+
+
+$(document).ready(function () {
+  fetchCart(getData('user')[1].uid, true);
+});
+
+
+
+//
